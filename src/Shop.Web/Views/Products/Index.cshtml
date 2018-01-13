@@ -1,22 +1,31 @@
-﻿@using Shop.Core.Domain
+﻿
+@using Shop.Core.Domain
 @model List<Product>
-
 
 
 
 <div class="row">
     <div class="col-lg-12">
-
-        <h1>Welcome to shop!</h1>
-
-        <ul>
-            @foreach (var product in Model)
-            {
-                <li>@product.Name  [@product.Price  PLN]</li>
-
-            }
-        </ul>
-
+        <a asp-area="" asp-controller="Products" asp-action="Add" class="btn btn-primary">Add product</a>
     </div>
 
+</div>
+
+
+@*<div class="row">
+    <div class="col-lg-12">
+        <h1>Products</h1>
+    </div>
+</div>*@
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1>Product List</h1>
+        @foreach (var product in Model)
+            {
+            <div class="list-group">
+                <a href="#" title="Add To Cart" class="list-group-item list-group-item-action">@product.Name [@product.Price PLN]</a>
+            </div>
+        }
+    </div>
 </div>
