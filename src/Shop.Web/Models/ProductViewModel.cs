@@ -9,6 +9,10 @@ namespace Shop.Web.Models
 {
     public class ProductViewModel
     {
+
+
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage = "Name was not provided. ")]
         [StringLength(100, MinimumLength =3)]
         public string Name { get; set; }
@@ -20,19 +24,12 @@ namespace Shop.Web.Models
         [Required]
         [Range(1,100000)]
 
+
         
 
         public decimal Price { get; set; }
 
-        public List<SelectListItem> Categories { get; } = new List<SelectListItem>
-        {
-
-            new SelectListItem {Text = "Electronics", Value = "Electronics"},
-            new SelectListItem {Text = "Trousers", Value = "Trousers"},
-            new SelectListItem {Text = "Tools", Value = "Tools"}
-
-
-        };
+       
 
     }
 }
